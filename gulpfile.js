@@ -15,6 +15,7 @@ var gulp = require('gulp'), //本地安装gulp所用到的地方
     rename = require('gulp-rename'), // 文件重命名
     sourcemaps = require('gulp-sourcemaps'), // 来源地图
     clean = require('gulp-clean'); // 文件清理
+    uncss = require('gulp-uncss-task');
 
  // Static server
 gulp.task('browser-sync', function() {
@@ -121,4 +122,11 @@ gulp.task('rename', function() {
 gulp.task('clean', function() {
   return gulp.src(['dist/css/maps','dist/js/maps'], {read: false})
     .pipe(clean());
+});
+gulp.task('uncss', function() {
+    gulp.src('style.css')
+        .pipe(uncss({
+            html: ['src/**.html']
+        }))
+        .pipe(gulp.dest('dest'));
 });
