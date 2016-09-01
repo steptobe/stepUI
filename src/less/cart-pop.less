@@ -1,0 +1,40 @@
+.box_select{
+	width: 100%;
+	position: fixed;
+	display: none;
+	bottom:0px;
+	overflow: visible !important;
+	background: #fff;
+	z-index: 100000;
+	.pull-left{
+		width: 25%;
+		margin: -10px 10px 0;
+		img{
+			border: 1px solid @border-default;
+			width: 100%;
+		}
+	}
+	h6{
+		font-size: 1em;
+	}
+	li{
+		float: left;
+		width: 4.5rem;
+		margin-left: 10px;
+		margin-bottom: 8px;
+		button{
+			width: 100%;
+			background: #fff;
+			border: 1px solid @border-default;
+			padding: 5px 6px;
+			box-shadow: none;
+			outline: none;
+		}
+		&.active{
+			button{
+				border: 1px solid @color-text;
+				color: @color-text;
+			}
+		} 
+	}
+}
